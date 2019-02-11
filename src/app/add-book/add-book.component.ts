@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Book} from "../classes/book";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-add-book',
@@ -7,6 +8,7 @@ import {Book} from "../classes/book";
   styleUrls: ['./add-book.component.scss']
 })
 export class AddBookComponent implements OnInit {
+
 
   model = new Book('', '')
 
@@ -16,4 +18,7 @@ export class AddBookComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit(bookForm: NgForm) {
+    bookForm.resetForm()
+  }
 }
